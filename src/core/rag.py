@@ -2,13 +2,12 @@ from database.vetor_db import search
 from core.prompt import prompt
 from core.llmService import chatResponse
 
+"""
+Pipeline RAG, no qual recupera top-k segmentos do banco vetorial,
+monta prompt estruturado e gera resposta via API LLM.
+"""
+
 def answerQuestion(collection, question, embedding_function, k=3):
-    """
-    Pipeline RAG corrigido:
-    - Recupera top-k segmentos do banco vetorial
-    - Monta prompt estruturado
-    - Gera resposta via API LLM
-    """
     
     results = search(collection, question, embedding_function, k)
     documents = results["documents"]
