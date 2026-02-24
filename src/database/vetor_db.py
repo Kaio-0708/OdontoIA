@@ -6,6 +6,7 @@ import uuid
 Cria e gerencia uma coleção no ChromaDB para 
 armazenar textos convertidos em embeddings vetoriais.
 """
+
 def initDB(persist_directory="db"):
     client = chromadb.Client(
         Settings(

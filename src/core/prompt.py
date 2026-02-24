@@ -1,3 +1,7 @@
+"""
+Prompt adaptado para área especifica de Odontologia.
+"""
+
 def prompt(contextSegments, question):
     contextText = ""
     
