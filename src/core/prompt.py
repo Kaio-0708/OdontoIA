@@ -2,12 +2,14 @@
 Prompt adaptado para área especifica de Odontologia.
 """
 
-def prompt(contextSegments, question):
+def prompt(contextSegments, question):   
     contextText = ""
+    i = 0
     
-    for i, segment in enumerate(contextSegments):
+    for segment in contextSegments:
         contextText += f"Segmento {i+1}:\n{segment}\n\n"
-
+        i += 1
+    
     prompt = f"""
 Você é um assistente especialista em Odontologia que responde perguntas **somente com base no contexto fornecido**.
 
