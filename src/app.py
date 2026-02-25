@@ -39,8 +39,11 @@ if st.button("Resposta") and question and uploaded_file:
         st.write(result["answer"])
 
         st.markdown("**Trechos utilizados:**")
-        for i, seg in enumerate(result["segments"]):
-            st.write(f"{i+1}: {seg[:300]}...")  
+       
+        i = 0  
+        for seg in result["segments"]:
+            st.write(f"{i+1}: {seg[:300]}...")
+            i += 1 
 
         st.markdown("**Scores de similaridade:**")
         st.write(result["scores"])
