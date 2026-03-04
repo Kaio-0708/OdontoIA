@@ -5,3 +5,4 @@ python-dotenv
 docling
 pypdf
 tqdm
+protobuf==4.25.3
