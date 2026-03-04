@@ -1,7 +1,0 @@
-streamlit
-chromadb
-mistralai
-python-dotenv
-docling
-pypdf
-tqdm
