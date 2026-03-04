@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.join(os.getcwd(), "src"))
+
 import streamlit as st
 from core.convert import analisarPdf
 from core.cleaner import clearText
