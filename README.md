@@ -12,23 +12,23 @@ A interface foi construída com **Streamlit**, permitindo interação simples en
 O sistema segue a arquitetura clássica de **RAG (Retrieval-Augmented Generation)**:
 
 Documento
-↓
+->
 Conversão para texto
-↓
+->
 Limpeza
-↓
+->
 Chunking
-↓
+->
 Embeddings
-↓
+->
 Banco Vetorial (ChromaDB)
-↓
+->
 Busca Semântica
-↓
+->
 Construção do Prompt
-↓
+->
 LLM (Mistral)
-↓
+->
 Resposta
 
 # Tecnologias Utilizadas
@@ -45,7 +45,7 @@ Resposta
 
 O sistema utiliza o conceito de **Retrieval-Augmented Generation (RAG)**, que combina **busca semântica em banco vetorial com geração de texto por LLM**.
 
-## 1. Upload do Documento
+## Upload do Documento
 
 O usuário envia um arquivo:
 
@@ -62,6 +62,7 @@ Arquivos TXT são carregados diretamente.
 
 Arquivo responsável:
 core/convert.py
+
 Função principal:
 analisarPdf(uploadedFile)
 
@@ -78,6 +79,7 @@ Principais operações:
 
 Arquivo responsável:
 core/cleaner.py
+
 Função principal:
 clearText(text)
 
@@ -96,6 +98,7 @@ O **overlap evita perda de informação entre blocos consecutivos**.
 
 Arquivo responsável:
 core/chunking.py
+
 Função principal:
 chunkText(text, size=700, overlap=100)
 
@@ -108,9 +111,9 @@ Esses vetores representam semanticamente o conteúdo do texto.
 
 Arquivo responsável:
 core/embeddings.py
+
 Função principal:
 embedding(text)
-
 
 # Banco Vetorial
 
@@ -118,6 +121,7 @@ Os embeddings são armazenados em um banco vetorial **ChromaDB**.
 
 Arquivo responsável:
 database/vetor_db.py
+
 Funções principais:
 
 ### Inicializar banco
@@ -146,6 +150,7 @@ Os segmentos recuperados são organizados em um prompt estruturado.
 
 Arquivo responsável:
 core/prompt.py
+
 Função principal:
 prompt(contextSegments, question)
 
@@ -167,6 +172,7 @@ mistral-medium-latest
 
 Arquivo responsável:
 core/llmService.py
+
 Função principal:
 chatResponse(prompt)
 
@@ -174,21 +180,22 @@ chatResponse(prompt)
 
 O fluxo final de resposta ocorre no arquivo:
 core/rag.py
+
 Função principal:
 answerQuestion(collection, question, embedding_function, k=3)
 
 Fluxo interno:
 
 Pergunta
-↓
+->
 Busca no banco vetorial
-↓
+->
 Recuperação de segmentos
-↓
+->
 Construção do prompt
-↓
+->
 Envio para LLM
-↓
+->
 Resposta
 
 # Interface Streamlit
@@ -210,7 +217,7 @@ O usuário pode visualizar:
 - trechos utilizados
 - scores de similaridade
 
-Exemplo de Fluxo de Uso
+Exemplo de Fluxo de Uso:
 
 1. Usuário envia PDF de odontologia  
 2. Documento é convertido para texto  
@@ -227,7 +234,6 @@ Exemplo de Fluxo de Uso
 O sistema foi projetado para **evitar alucinação do modelo**.
 
 Se a informação não estiver presente no documento, o modelo retorna:
-
 Não há informações suficientes no contexto fornecido.
 
 ## Streamlit Cloud: 
