@@ -13,7 +13,7 @@ O sistema segue a arquitetura clássica de **RAG (Retrieval-Augmented Generation
 
 Documento
 ->
-Conversão para texto
+Conversão para texto ou markdown
 ->
 Limpeza
 ->
