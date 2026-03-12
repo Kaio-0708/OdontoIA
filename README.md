@@ -237,7 +237,7 @@ Se a informação não estiver presente no documento, o modelo retorna:
 Não há informações suficientes no contexto fornecido.
 
 ## Streamlit Cloud: 
-https://odontoia-kxjsrwjqwcow2jhz63p3sr.streamlit.app/
+https://odontoia-elxjbwirhh3cxtjvm8zjy7.streamlit.app/
 
 ## Autor
 
