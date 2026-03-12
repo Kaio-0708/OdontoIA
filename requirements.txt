@@ -1,6 +1,6 @@
 streamlit
 chromadb
-mistralai
+mistralai==1.12.3
 python-dotenv
 docling
 pypdf
